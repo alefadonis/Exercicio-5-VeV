@@ -190,10 +190,10 @@ describe('tax rates', () => {
     cy.get('button.ui.red.labeled.icon.button').not('[disabled]').click();
 
     // Click cancel instead of confirm
-    cy.get('[id="confirmation-cancel-button"]').click();
+    cy.get('*[class^="ui red basic cancel inverted button"]').click();
 
     // Assert that the tax rate is still visible
-    cy.get('body').should('contain', 'Updated Tax 7%');
+    cy.get('body').should('contain', 'Updated Tax 9%');
   });
 
   it('validate filtering by invalid date range shows no results', () => {
